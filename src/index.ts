@@ -49,17 +49,5 @@ app.get('/chat', async (c) => {
     })
 })
 
-app.get('/chat2', async (c) => {
-    const {prompt} = c.req.query();
-    const chatStream = await chat(prompt);
-
-    return stream(c, async (stream) => {
-        for await (const chunk of chatStream) {
-            await stream.write(`data: ${chunk.choices[0]?.delta?.content || ''}`);
-        }
-        await stream.write(`data: [DONE]`);
-    })
-})
-
 export default app
 

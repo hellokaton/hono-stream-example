@@ -242,7 +242,7 @@
             let aiMessage = null;
 
             eventSource.onmessage = (event) => {
-                // console.log('Received:', event.data);
+                console.log('Received:', event.data);
                 if (event.data === '[DONE]') {
                     eventSource.close();
                     isProcessing = false;
