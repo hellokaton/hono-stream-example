@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "types": [
+      "bun-types"
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  }
+}
